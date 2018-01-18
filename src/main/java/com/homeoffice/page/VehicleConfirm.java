@@ -9,7 +9,7 @@ public class VehicleConfirm {
 
 	public By regNumber = By.cssSelector("span.reg-mark");
 
-	// First one is the make, second is the colour
+	// First one is the make, second is the colour from the list of elements
 	public By makeColour = By.cssSelector("span strong");
 
 	public By vehicleNotFoundError = By.cssSelector("h3.heading-large");

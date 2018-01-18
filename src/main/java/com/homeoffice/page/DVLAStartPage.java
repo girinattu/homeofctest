@@ -8,5 +8,4 @@ import org.openqa.selenium.By;
 public class DVLAStartPage {
 	public By startButton = By.cssSelector("p.get-started a");
 
-
 }

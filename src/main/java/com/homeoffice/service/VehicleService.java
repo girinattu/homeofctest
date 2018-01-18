@@ -26,7 +26,7 @@ public class VehicleService {
 
 	// Test to see if we can read the list of vehicles from the files.
 	public static void main(String[] args) {
-		List <Vehicle> ff = new ArrayList <>();
+		List <Vehicle> ff;
 		VehicleService vh = new VehicleService();
 		List <String> extns = new ArrayList <>();
 		extns.add("csv");
@@ -64,15 +64,14 @@ public class VehicleService {
 		return vehiclesFromAllFiles;
 	}
 
-	//    This is reading CSV files
 	private List <Vehicle> readCSVFile(String fileName) {
 		String line = "";
-		String cstSeparator = ",";
+		String csvSeparator = ",";
 		List <Vehicle> vehicleList = new ArrayList <>();
 		try (BufferedReader br = new BufferedReader(new FileReader(fileName))) {
 			br.readLine();
 			while ((line = br.readLine()) != null) {
-				String[] vehicleData = line.split(cstSeparator);
+				String[] vehicleData = line.split(csvSeparator);
 				Vehicle vehicle = new Vehicle();
 				vehicle.setRegNumber(vehicleData[0]);
 				vehicle.setMake(vehicleData[1]);
@@ -85,7 +84,7 @@ public class VehicleService {
 		return vehicleList;
 	}
 
-	//    this is reading an excel file and I've sued POI API
+
 	private List <Vehicle> readExcelFile(String fileName) {
 		List <Vehicle> vehicleList = new ArrayList <>();
 		try {
