@@ -1,0 +1,47 @@
+===== Request =====
+--- Headers ---
+Accept : [application/json]
+Content-Type : [application/json]
+Content-Length : [74]
+Prefer : [FULL]
+X-Test : [false]
+X-Debug : [false]
+X-Performance : [false]
+Accept-Charset : [UTF-8]
+X-Forwarded-For : [127.0.0.1]
+Accept-Encoding : [application/gzip]
+Date : [Tue Aug 08 09:16:09 EDT 2017]
+X-Client-Transaction-Id : [c81007f6-5dde-4494-b108-dc5176265ec1]
+Authorization : [bearer 34425608-36ad-4fc1-85b4-e300c6ea2829]
+X-POS-Id : [ADCustomerService]
+Accept-Language : [en]
+Cookie : [JSESSIONID=9DE8F651F52156D4B51EC9866E44339B-n1.app2]
+
+--- URI ---
+http://10.10.106.69/commercial-cpm/v1/baskets/000030541502197707838/passengers/000030521502197242781_20170818LTNALC2223_8796229039442/update-basic-details-request POST
+
+ Body ---
+{"name":{"title":"infant","firstName":"infa","lastName":"infa"},"age":"0"}
+
+[DEBUG] 2017-08-08 09:16:09,741 com.easyjet.hybris.agentdesktop.core.rest.interceptor.ADLoggingInterceptor -
+===== Response =====
+--- Headers ---
+Date : [Tue, 08 Aug 2017 13:16:09 GMT]
+Server : [Apache]
+Last-Modified : [Tue, 09 May 2017 08:46:39 GMT]
+ETag : ["d5-54f1364ea68f0"]
+Accept-Ranges : [bytes]
+Content-Length : [213]
+Connection : [close]
+Content-Type : [application/json]
+
+--- Body ---
+{
+ "errors": [
+    {
+      "code": "ERR-PDTMGT-500",
+      "message": "Error processing request, as internal server error",
+      "href": "http://services.easyjet.com/commercial/additional-information"
+    }
+ ]
+}

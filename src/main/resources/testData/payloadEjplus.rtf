@@ -1,0 +1,366 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1504\cocoasubrtf600
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;\csgray\c100000;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 [DEBUG] 2017-07-17 11:43:17,709 com.easyjet.hybris.agentdesktop.core.rest.interceptor.ADLoggingInterceptor - \
+===== Request =====\
+--- Headers ---\
+Accept : [application/json]\
+Content-Type : [application/json]\
+Content-Length : [82]\
+Prefer : [FULL]\
+X-Test : [false]\
+X-Debug : [false]\
+X-Performance : [false]\
+Accept-Charset : [UTF-8]\
+X-Forwarded-For : [127.0.0.1]\
+Accept-Encoding : [application/gzip]\
+Date : [Mon Jul 17 11:43:17 EDT 2017]\
+X-Client-Transaction-Id : [e6fa9c85-81f5-41f9-a1ea-b8d41208823f]\
+Authorization : [bearer 56f7c62f-b00a-429f-86b4-eacbbbfeb5da]\
+X-POS-Id : [ADCustomerService]\
+Accept-Language : [en]\
+Cookie : [JSESSIONID=530FED735234282FE9B10C6D1EAE76F3.app1]\
+\
+--- URI ---\
+http://10.10.98.94/commercial-cpm/v1/baskets/000040441500306137401/passengers/000040431500305547289_20170719LTNALC9101_8796259710290/update-basic-details-request POST\
+\
+ Body ---\
+\{"name":\{"title":"mr","firstName":"asdasdasd","lastName":"Hahfhfhfhf"\},"age":"16"\}\
+\
+[DEBUG] 2017-07-17 11:43:17,844 com.easyjet.hybris.agentdesktop.core.rest.interceptor.ADLoggingInterceptor - \
+===== Response =====\
+--- Headers ---\
+Date : [Mon, 17 Jul 2017 15:43:17 GMT]\
+Server : [Apache]\
+X-Frame-Options : [SAMEORIGIN]\
+Cache-Control : [no-cache, no-store, max-age=0, must-revalidate]\
+Pragma : [no-cache]\
+Expires : [0]\
+X-XSS-Protection : [1; mode=block]\
+X-Content-Type-Options : [nosniff]\
+Content-Length : [403]\
+Vary : [Accept-Encoding]\
+Keep-Alive : [timeout=5, max=40]\
+Connection : [Keep-Alive]\
+Content-Type : [application/json;charset=UTF-8]\
+\
+--- Body ---\
+\{\
+   "additionalInformation" : [ \{\
+      "code" : "SVC_100519_1002",\
+      "href" : "http://services.easyjet.com/commercial/additional-information",\
+      "message" : "Removing the EJ Plus Number and entries associated because of Surname change"\
+   \} ],\
+   "operationConfirmation" : \{\
+      "basketCode" : "000040441500306137401",\
+      "href" : "/commercial-cpm/v1/baskets/000040441500306137401"\
+   \}\
+\}\
+[DEBUG] 2017-07-17 11:43:17,902 com.easyjet.hybris.agentdesktop.core.rest.interceptor.ADLoggingInterceptor - \
+===== Request =====\
+--- Headers ---\
+Accept : [application/json]\
+Content-Length : [0]\
+Prefer : [FULL]\
+X-Test : [false]\
+X-Debug : [false]\
+X-Performance : [false]\
+Accept-Charset : [UTF-8]\
+X-Forwarded-For : [127.0.0.1]\
+Accept-Encoding : [application/gzip]\
+Date : [Mon Jul 17 11:43:17 EDT 2017]\
+X-Client-Transaction-Id : [ed0b6755-0d46-4a20-b630-ad44be4f565f]\
+Content-Type : [application/json]\
+Authorization : [bearer 56f7c62f-b00a-429f-86b4-eacbbbfeb5da]\
+X-POS-Id : [ADCustomerService]\
+Accept-Language : [en]\
+Cookie : [JSESSIONID=530FED735234282FE9B10C6D1EAE76F3.app1]\
+\
+--- URI ---\
+http://10.10.98.94/commercial-cpm/v1/baskets/000040441500306137401 GET\
+\
+ Body ---\
+\
+\
+[DEBUG] 2017-07-17 11:43:17,920 com.easyjet.hybris.agentdesktop.core.rest.interceptor.ADLoggingInterceptor - \
+===== Response =====\
+--- Headers ---\
+Date : [Mon, 17 Jul 2017 15:43:17 GMT]\
+Server : [Apache]\
+X-Frame-Options : [SAMEORIGIN]\
+Cache-Control : [no-cache, no-store, max-age=0, must-revalidate]\
+Pragma : [no-cache]\
+Expires : [0]\
+X-XSS-Protection : [1; mode=block]\
+X-Content-Type-Options : [nosniff]\
+Content-Length : [5098]\
+Vary : [Accept-Encoding]\
+Keep-Alive : [timeout=5, max=40]\
+Connection : [Keep-Alive]\
+Content-Type : [application/json;charset=UTF-8]\
+\
+--- Body ---\
+\{\
+   "basket" : \{\
+      "basketLanguage" : "en",\
+      "basketType" : "STANDARD_CUSTOMER",\
+      "bookingReason" : "LEISURE",\
+      "code" : "000040441500306137401",\
+      "defaultCardType" : "CREDIT",\
+      "discounts" : \{\
+         "totalAmount" : 0.0\
+      \},\
+      "fees" : \{\
+         "items" : [ \{\
+            "amount" : 14.0,\
+            "code" : "AdminFee",\
+            "name" : "Administration Fee",\
+            "percentage" : 0.0\
+         \}, \{\
+            "amount" : 2.35,\
+            "code" : "CRCardFee",\
+            "name" : "Credit Card Fee",\
+            "percentage" : 5.0\
+         \} ],\
+         "totalAmount" : 16.35\
+      \},\
+      "outbounds" : [ \{\
+         "flights" : [ \{\
+            "arrivalDateTime" : "Wed 19-Jul-2017 08-30-00",\
+            "carrier" : "EZ",\
+            "departureDateTime" : "Wed 19-Jul-2017 07-00-00",\
+            "flightKey" : "20170719LTNALC9101",\
+            "flightNumber" : "9101",\
+            "passengers" : [ \{\
+               "age" : 16,\
+               "apisStatus" : "RED",\
+               "cabinItems" : [ \{\
+                  "bundleCode" : "Standard",\
+                  "code" : "CabinBag1",\
+                  "name" : "Cabin Bag 1",\
+                  "orderEntryNumber" : "3",\
+                  "pricing" : \{\
+                     "basePrice" : 0.0,\
+                     "discounts" : [ ],\
+                     "fees" : [ \{\
+                        "amount" : 0.0,\
+                        "code" : "CRCardFee",\
+                        "name" : "Credit Card Fee",\
+                        "percentage" : 5.0\
+                     \} ],\
+                     "taxes" : [ ],\
+                     "totalAmountWithCreditCard" : 0.0,\
+                     "totalAmountWithDebitCard" : 0.0\
+                  \},\
+                  "quantity" : 1,\
+                  "type" : "CabinBagProduct",\
+                  "extraWeight" : [ ],\
+                  "maxHeight" : 25.0,\
+                  "maxLength" : 56.0,\
+                  "maxWeight" : 10.0,\
+                  "maxWidth" : 45.0\
+               \} ],\
+               "code" : "000040431500305547289_20170719LTNALC9101_8796259710290",\
+               "fareProduct" : \{\
+                  "bundleCode" : "Standard",\
+                  "code" : "STD",\
+                  "name" : "Standard",\
+                  "orderEntryNumber" : "2",\
+                  "pricing" : \{\
+                     "basePrice" : 20.0,\
+                     "discounts" : [ ],\
+                     "fees" : [ \{\
+                        "amount" : 1.65,\
+                        "code" : "CRCardFee",\
+                        "name" : "Credit Card Fee",\
+                        "percentage" : 5.0\
+                     \} ],\
+                     "taxes" : [ \{\
+                        "amount" : 13.0,\
+                        "code" : "UKAPDA_2",\
+                        "name" : "UK APD - Band A",\
+                        "percentage" : 0.0\
+                     \} ],\
+                     "totalAmountWithCreditCard" : 34.65,\
+                     "totalAmountWithDebitCard" : 33.0\
+                  \},\
+                  "quantity" : 1,\
+                  "type" : "FareProduct"\
+               \},\
+               "fareType" : "STANDARD",\
+               "isLead" : false,\
+               "passengerDetails" : \{\
+                  "ejPlusCardNumber" : "S043656",\
+                  "email" : "aasdas@dd.com",\
+                  "name" : \{\
+                     "firstName" : "asdasdasd",\
+                     "fullName" : "asdasdasd Hawkins",\
+                     "lastName" : "Hawkins",\
+                     "title" : "mr"\
+                  \},\
+                  "nifNumber" : "",\
+                  "passengerType" : "adult",\
+                  "phoneNumber" : "12313213"\
+               \},\
+               "passengerMap" : [ "000040431500305547289_20170719LTNALC9101_8796259710290" ],\
+               "passengerTotalWithCreditCard" : 34.65,\
+               "passengerTotalWithDebitCard" : 33.0,\
+               "specialRequests" : \{\
+                  "ssrs" : [ ]\
+               \},\
+               "toeiCode" : ""\
+            \} ],\
+            "sector" : \{\
+               "apisRequired" : true,\
+               "arrival" : \{\
+                  "code" : "ALC",\
+                  "name" : "Alicante",\
+                  "terminal" : ""\
+               \},\
+               "code" : "LTNALC",\
+               "departure" : \{\
+                  "code" : "LTN",\
+                  "name" : "London Luton",\
+                  "terminal" : ""\
+               \},\
+               "nifNumberRequired" : false\
+            \}\
+         \} ],\
+         "isDirect" : false,\
+         "journeyTotalWithCreditCard" : 34.65,\
+         "journeyTotalWithDebitCard" : 33.0,\
+         "stops" : 0,\
+         "totalDuration" : "1h30m"\
+      \} ],\
+      "subtotalAmountWithCreditCard" : 21.0,\
+      "subtotalAmountWithDebitCard" : 20.0,\
+      "taxes" : \{\
+         "totalAmount" : 0.0\
+      \},\
+      "totalAmountWithCreditCard" : 49.35,\
+      "totalAmountWithDebitCard" : 47.0,\
+      "currency" : \{\
+         "code" : "GBP",\
+         "decimalPlaces" : 2,\
+         "name" : "Pound",\
+         "symbol" : "\'a3"\
+      \}\
+   \}\
+\}\
+[DEBUG] 2017-07-17 11:43:17,924 com.easyjet.hybris.agentdesktop.core.rest.interceptor.ADLoggingInterceptor - \
+===== Request =====\
+--- Headers ---\
+Accept : [application/json]\
+Content-Length : [0]\
+Prefer : [FULL]\
+X-Test : [false]\
+X-Debug : [false]\
+X-Performance : [false]\
+Accept-Charset : [UTF-8]\
+X-Forwarded-For : [127.0.0.1]\
+Accept-Encoding : [application/gzip]\
+Date : [Mon Jul 17 11:43:17 EDT 2017]\
+X-Client-Transaction-Id : [3fefebde-e2ec-4f0d-844f-813d1bb8d9b4]\
+Content-Type : [application/json]\
+Authorization : [bearer 56f7c62f-b00a-429f-86b4-eacbbbfeb5da]\
+X-POS-Id : [ADCustomerService]\
+Accept-Language : [en]\
+Cookie : [JSESSIONID=530FED735234282FE9B10C6D1EAE76F3.app1]\
+\
+--- URI ---\
+http://10.10.98.94/commercial-cpm/v1/internal-payment-funds\
+\
+--- Parameters ---\
+fund-type=credit-file&filter-by=STANDARD_CUSTOMER GET\
+ Body ---\
+\
+\
+[DEBUG] 2017-07-17 11:43:17,930 com.easyjet.hybris.agentdesktop.core.rest.interceptor.ADLoggingInterceptor - \
+===== Response =====\
+--- Headers ---\
+Date : [Mon, 17 Jul 2017 15:43:17 GMT]\
+Server : [Apache]\
+X-Frame-Options : [SAMEORIGIN]\
+Cache-Control : [no-cache, no-store, max-age=0, must-revalidate]\
+Pragma : [no-cache]\
+Expires : [0]\
+X-XSS-Protection : [1; mode=block]\
+X-Content-Type-Options : [nosniff]\
+Content-Length : [1937]\
+Vary : [Accept-Encoding]\
+Keep-Alive : [timeout=5, max=40]\
+Connection : [Keep-Alive]\
+Content-Type : [application/json;charset=UTF-8]\
+\
+--- Body ---\
+\{\
+   "creditFiles" : [ \{\
+      "code" : "ACTIVE_ONE_GROUP_GBP",\
+      "created" : "2017-07-14",\
+      "currencyCode" : "GBP",\
+      "currentBalance" : 100.0,\
+      "expiry" : "2018-04-29",\
+      "name" : "ACTIVE_ONE_GROUP_GBP",\
+      "originalBalance" : 100.0\
+   \}, \{\
+      "code" : "ACTIVE_EUR",\
+      "created" : "2017-07-14",\
+      "currencyCode" : "EUR",\
+      "currentBalance" : 1000000.0,\
+      "expiry" : "2018-04-29",\
+      "name" : "ACTIVE_EUR",\
+      "originalBalance" : 1000000.0\
+   \}, \{\
+      "code" : "ACTIVE_GBP",\
+      "created" : "2017-07-14",\
+      "currencyCode" : "GBP",\
+      "currentBalance" : 1000000.0,\
+      "expiry" : "2018-04-29",\
+      "name" : "ACTIVE_GBP",\
+      "originalBalance" : 1000000.0\
+   \}, \{\
+      "code" : "ACTIVE_ONE_GROUP_EUR",\
+      "created" : "2017-07-14",\
+      "currencyCode" : "EUR",\
+      "currentBalance" : 100.0,\
+      "expiry" : "2018-04-29",\
+      "name" : "ACTIVE_ONE_GROUP_EUR",\
+      "originalBalance" : 100.0\
+   \}, \{\
+      "code" : "ZERO_BALANCE_GBP",\
+      "created" : "2017-07-14",\
+      "currencyCode" : "GBP",\
+      "currentBalance" : 0.0,\
+      "expiry" : "2018-04-29",\
+      "name" : "ZERO_BALANCE_GBP",\
+      "originalBalance" : 0.0\
+   \}, \{\
+      "code" : "ZERO_BALANCE_ONE_GROUP_GBP",\
+      "created" : "2017-07-14",\
+      "currencyCode" : "GBP",\
+      "currentBalance" : 0.0,\
+      "expiry" : "2018-04-29",\
+      "name" : "ZERO_BALANCE_ONE_GROUP_GBP",\
+      "originalBalance" : 0.0\
+   \}, \{\
+      "code" : "ZERO_BALANCE_EUR",\
+      "created" : "2017-07-14",\
+      "currencyCode" : "EUR",\
+      "currentBalance" : 0.0,\
+      "expiry" : "2018-04-29",\
+      "name" : "ZERO_BALANCE_EUR",\
+      "originalBalance" : 0.0\
+   \}, \{\
+      "code" : "ZERO_BALANCE_ONE_GROUP_EUR",\
+      "created" : "2017-07-14",\
+      "currencyCode" : "EUR",\
+      "currentBalance" : 0.0,\
+      "expiry" : "2018-04-29",\
+      "name" : "ZERO_BALANCE_ONE_GROUP_EUR",\
+      "originalBalance" : 0.0\
+   \} ]\
+\}}

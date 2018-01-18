@@ -1,0 +1,232 @@
+# Import essential data for the Accelerator
+#
+# Includes:
+# * Languages
+# * Currencies
+# * Titles
+# * Vendors
+# * Warehouses
+# * Supported Credit/Debit cards
+# * User Groups
+# * DistanceUnits for Storelocator
+# * MediaFolders
+# * MediaFormats
+# * Tax & Tax Groups
+# * Jobs
+
+$lang=en
+
+# Currencies
+INSERT_UPDATE Currency;isocode[unique=true];conversion;digits;symbol
+;GBP;1;2;£
+;EUR;1;2;€
+;USD;1,4;2;$
+;CHF;1;2;CHF
+;SEK;1;0;kr
+;DKK;1;2;Dkr
+;CZK;1;2;Kc
+;HUF;1;0;Ft
+;PLN;1;2;zl
+;MAD;1;0;Md
+
+
+# SiteMap Language Currencies
+INSERT_UPDATE SiteMapLanguageCurrency;&siteMapLanguageCurrency;language(isoCode)[unique=true];currency(isocode)[unique=true];
+;enUsd;en;USD
+;enGbp;en;GBP
+;enEur;en;EUR
+;jaUsd;ja;USD
+;jaGbp;ja;GBP
+;jaEur;ja;EUR
+;deUsd;de;USD
+;deGbp;de;GBP
+;deEur;de;EUR
+;zhUsd;zh;USD
+;zhGbp;zh;GBP
+;zhEur;zh;EUR
+
+# Vendor
+INSERT_UPDATE Vendor;code[unique=true];name
+;default;Default Vendor
+;easyJet;easyJet Vendor
+
+INSERT_UPDATE TravelProvider;code[unique=true];name[lang=$lang]
+;EZY;easyJet
+;EZS;easyJet
+;EZ;easyJet
+
+# Warehouse
+INSERT_UPDATE Warehouse;code[unique=true];name;vendor(code)[default=default];default[default=true]
+;default;Default Warehouse;
+;warehouse_s;Warehouse South;
+;warehouse_e;Warehouse East;
+;warehouse_w;Warehouse West;
+;warehouse_n;Warehouse North;
+
+# Disable preview for email pages
+UPDATE CMSPageType;code[unique=true];previewDisabled
+;EmailPage;true
+
+# Titles
+INSERT_UPDATE Title;code[unique=true];name[lang=$lang];Gender(code);active[default=true]
+;mr;Mr;MALE;true
+;miss;Miss;FEMALE;true
+;mrs;Mrs;FEMALE;true
+;ms;Ms;FEMALE;true
+;infant;Infant;;true
+
+# Media Folders
+INSERT_UPDATE MediaFolder;qualifier[unique=true];path[unique=true]
+;images;images
+;email-body;email-body
+;email-attachments;email-attachments
+
+# Media formats
+INSERT_UPDATE MediaFormat;qualifier[unique=true]
+;1200Wx1200H
+;515Wx515H
+;365Wx246H
+;300Wx300H
+;96Wx96H
+;65Wx65H
+;30Wx30H
+
+
+INSERT_UPDATE ServicelayerJob;code[unique=true];springId[unique=true]
+;cartRemovalJob;cartRemovalJob
+;siteMapMediaJob;siteMapMediaJob
+
+INSERT_UPDATE GenerateTransportOfferingsJob;code[unique=true];job(code);transportOfferingCSV;sessionLanguage(isocode);sessionCurrency(isocode);
+;generateTransportOfferingsJob;generateTransportOfferingsJob;/ext-travelcore/ejinitialdata/resources/ejinitialdata/import/coredata/common/dev/csv/transportoffering.csv;en;GBP
+
+# Added EJ specific values to OOTB
+INSERT_UPDATE CreditCardType;code[unique=true];name[lang=en];;
+;AX;"American Express";;
+;DC;"Diners Club";;
+;SW;"UK Maestro";;
+;MC;"MasterCard";;
+;DM;"Debit MasterCard";;
+;EC;"EuroCard";;
+;VI;"Visa";;
+;DL;"Visa Debit";;
+;DI;"Discover";;
+;EL;"Visa Electron";;
+;CB;"Carte Bleue";;
+;XX;"Invalid CC";;
+;TP;"UATP / Airplus";;
+;CE;"Visa Electron Credit";;
+
+
+# EjCardType
+INSERT_UPDATE EjCardType;code[unique = true];name[lang = $lang];isDebitCard[default=false]
+;AX;"American Express";
+;DC;"Diners Club";
+;SW;"UK Maestro";true
+;MC;"MasterCard";
+;DM;"Debit MasterCard";true
+;EC;"EuroCard";
+;VI;"Visa";
+;DL;"Visa Debit";true
+;DI;"Discover";
+;EL;"Visa Electron";true
+;CB;"Carte Bleue";true
+;XX;"Invalid CC";
+;TP;"UATP / Airplus";
+;CE;"Visa Electron Credit";
+
+#EjPaymentType
+INSERT_UPDATE EjPaymentType;code[unique = true];name[lang = $lang]
+ ;AX;"American Express"
+ ;DC;"Diners Club"
+ ;SW;"UK Maestro"
+ ;MC;"MasterCard"
+ ;DM;"Debit MasterCard"
+ ;EC;"EuroCard"
+ ;VI;"Visa"
+ ;DL;"Visa Debit"
+ ;DI;"Discover"
+ ;EL;"Visa Electron"
+ ;CB;"Carte Bleue"
+ ;XX;"Invalid CC"
+ ;TP;"UATP / Airplus"
+ ;CE;"Visa Electron Credit"
+ ;AA;"ApplePay American Express"
+ ;AL;"ApplePay Visa Debit"
+ ;AV;"ApplePay Visa"
+ ;AD;"ApplePay Debit MasterCard"
+ ;AM;"ApplePay MasterCard"
+ ;EV;"ELV"
+ ;UKBA;"UK Bank Account"
+ ;IBAN;"International Bank Account"
+ ;USBA;"US Bank Account"
+ ;Voucher;"Voucher"
+ ;Cash;"Cash"
+ ;Cheque;"Cheque"
+ ;CF;"Credit Shell"
+
+
+#Moved the below contents from other file as it is not loading the bookingtypes into StandardPaymentMode 
+#START#
+INSERT_UPDATE BookingReason;code[unique=true];name;active[default=true];
+;LEISURE;Leisure;;
+;BUSINESS;Business;;
+;FLIGHT_CREW;Flight Crew;;
+;CABIN_CREW;Cabin Crew;;
+;ENGINEERING;Engineering;;
+;OTHER_NON_PAYING_DUTY;Other non paying Duty;;
+
+INSERT_UPDATE EJBookingType;code[unique=true];name;channels(code);userGroup(uid);bookingReason(code);agentGroup(uid)
+;STANDARD_CUSTOMER;Standard Customer;Digital,Web,WebMobile,ADAirport,ADCustomerService,PublicApiB2B,PublicApiMobile;;LEISURE,BUSINESS;authorisedagent,agent
+;SERIES_SEATING;Series Seating;ADAirport,ADCustomerService;;LEISURE,BUSINESS;authorisedagent,agent
+;STAFF;Staff;Digital,Web,WebMobile,ADAirport,ADCustomerService;staffgroup;LEISURE,BUSINESS;
+;GROUP_BOOKING;Group Booking;ADAirport,ADCustomerService;;LEISURE,BUSINESS;authorisedagent,agent
+;DUTY_TRAVEL;Duty Travel;ADAirport,ADCustomerService;;FLIGHT_CREW,CABIN_CREW,ENGINEERING,OTHER_NON_PAYING_DUTY;authorisedagent,agent
+;IMMIGRATION;Immigration;ADAirport,ADCustomerService;;LEISURE,BUSINESS;authorisedagent,agent
+;EASYJET_HOLIDAYS;easyJet Holidays;PublicApiB2B;;LEISURE,BUSINESS;authorisedagent,agent
+;MARKETING;Marketing;ADAirport,ADCustomerService;;LEISURE,BUSINESS;authorisedagent,agent
+;CHARITY;Charity;ADAirport,ADCustomerService;;LEISURE,BUSINESS;authorisedagent,agent
+;LOYALTY_SCHEME;Loyalty Scheme;ADAirport,ADCustomerService;;LEISURE,BUSINESS;authorisedagent,agent
+;BUSINESS;Business;ADAirport,ADCustomerService,WebMobile,PublicApiMobile;;BUSINESS;authorisedagent
+;SUB_GROUP_BOOKING;Sub Group Booking;ADAirport,ADCustomerService;;LEISURE,BUSINESS;authorisedagent,agent
+#END#
+
+#Add paymentTypes to each StandardPaymentMode
+INSERT_UPDATE StandardPaymentMode;code[unique=true];paymentTypes(code);bookingTypes(code)
+;card;AX,DC,SW,MC,DM,EC,VI,DL,DI,EL,CB,XX,TP,CE;STANDARD_CUSTOMER,STAFF,DUTY_TRAVEL,GROUP_BOOKING,LOYALTY_SCHEME,EASYJET_HOLIDAYS,BUSINESS,SUB_GROUP_BOOKING
+;cash;Cash;STANDARD_CUSTOMER,STAFF,DUTY_TRAVEL,GROUP_BOOKING,LOYALTY_SCHEME,BUSINESS,SUB_GROUP_BOOKING
+;voucher;Voucher;STANDARD_CUSTOMER,GROUP_BOOKING,LOYALTY_SCHEME,BUSINESS,SUB_GROUP_BOOKING
+;creditfilefund;CF;DUTY_TRAVEL,GROUP_BOOKING,SERIES_SEATING,IMMIGRATION,MARKETING,CHARITY,LOYALTY_SCHEME,BUSINESS
+;elv;EV;STANDARD_CUSTOMER,STAFF,DUTY_TRAVEL,GROUP_BOOKING,LOYALTY_SCHEME,BUSINESS,SUB_GROUP_BOOKING
+;mobilewallet;;STANDARD_CUSTOMER,STAFF,SUB_GROUP_BOOKING
+;bankaccount;UKBA,IBAN,USBA
+;cheque;Cheque
+
+
+INSERT_UPDATE UserGroup;UID[unique=true];groups(uid)[mode=append];locname[lang=en];description
+;staffgroup;customergroup;"Easy jet staff Group";
+; significantothergroup
+
+UPDATE AttributeDescriptor;enclosingType(code)[unique=true];qualifier[unique=true];optional
+;Customer;customerID;false;
+
+
+INSERT_UPDATE ImpExMedia;code[unique=true];@media[translator=de.hybris.platform.impex.jalo.media.MediaDataTranslator][forceWrite=true];
+;resetSignificantOthersMedia;jar:com.easyjet.hybris.core.initialdata.setup.InitialDataSystemSetup&/ejinitialdata/import/coredata/common/resetSignificantOthersEndDate.impex
+
+INSERT_UPDATE ImpExImportCronJob; code[unique=true];jobMedia(code);job(code);sessionLanguage(isocode);sessionCurrency(isocode);
+;resetSignificantOthersEndDate;resetSignificantOthersMedia;ImpEx-Import;en;GBP;
+
+INSERT_UPDATE Trigger; cronJob(code)[unique = true]; cronExpression;
+;resetSignificantOthersEndDate;"0 00 00 1 4 ?";
+
+
+INSERT_UPDATE Domain;code[unique=true];name;
+;ADCSDomain;AD CS Domain;
+
+INSERT_UPDATE Component;code[unique=true];name;domain(code)[unique=true]
+;ADCSComponent;AD Customer Service Component;ADCSDomain
+
+INSERT_UPDATE CommentType;code[unique=true];name;domain(code)[unique=true]
+;bookingComment;Booking Comment;ADCSDomain
+
+
