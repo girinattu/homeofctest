@@ -4,16 +4,25 @@ package com.homeoffice.service;
 import com.homeoffice.model.FileInfo;
 import org.apache.commons.io.FilenameUtils;
 import org.apache.tika.Tika;
+
 import java.io.File;
 import java.io.IOException;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * Created by giridharvasudevan on 18/01/2018.
  */
 public class FileInfoService {
 
-	public HashMap<String, ArrayList<FileInfo>> getFileMapWithExtns() {
+	public static void main(String[] args) {
+		FileInfoService fileInfoService = new FileInfoService();
+		fileInfoService.getFileMapWithExtns();
+	}
+
+	public Map <String, ArrayList <FileInfo>> getFileMapWithExtns() {
 		List<FileInfo> fileData = new ArrayList <>();
 		// hardcoded at the moment but can take in values to point to the folder
 		File dir = new File("src/main/resources/testData");
@@ -62,6 +71,5 @@ public class FileInfoService {
 		}
 		return fileType;
 	}
-
 
 }

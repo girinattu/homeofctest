@@ -5,6 +5,8 @@ package com.homeoffice.model;
  */
 public class Vehicle {
 	private String regNumber;
+	private String make;
+	private String colour;
 
 	public String getRegNumber() {
 		return regNumber;
@@ -22,15 +24,13 @@ public class Vehicle {
 		this.make = make;
 	}
 
-	public String getModel() {
-		return model;
+	public String getColour() {
+		return colour;
 	}
 
-	public void setModel(String model) {
-		this.model = model;
+	public void setColour(String colour) {
+		this.colour = colour;
 	}
 
-	private String make;
-	private String model;
 
 }
