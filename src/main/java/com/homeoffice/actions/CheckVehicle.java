@@ -44,7 +44,8 @@ public class CheckVehicle extends BaseActions {
 				colourFromDVLA = driver.findElements(vehicleConfirm.makeColour).get(1).getText();
 				assertTrue("Vehicle registration number from file:" + vehicle.getRegNumber() + ".\n" +
 								"Vehicle registration number from DVLA: " + vehicleRegFromDVLA,
-						vehicleRegFromDVLA.replaceAll("\\s", "").equalsIgnoreCase(vehicle.getRegNumber()));
+						vehicleRegFromDVLA.replaceAll("\\s", "").equalsIgnoreCase(vehicle.getRegNumber()
+								.replaceAll("\\s", "")));
 				assertTrue("Vehicle manufacturer from file :" + vehicle.getMake() + ".\n" +
 								"Vehicle manufacturer from DVLA: " + makeFromDVLA,
 						vehicle.getMake().toUpperCase().trim().equals(makeFromDVLA.toUpperCase().trim()));
