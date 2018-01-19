@@ -34,13 +34,17 @@ public class CheckVehicle extends BaseActions {
 		for (Vehicle vehicle : vehiclesList) {
 			driver.findElement(vehicleCheck.enterRegText).sendKeys(vehicle.getRegNumber());
 			driver.findElement(vehicleCheck.continueButton).click();
-			String makeFromDVLA = null, colourFromDVLA = null;
-			String error = null;
+			String makeFromDVLA = null, colourFromDVLA = null, vehicleRegFromDVLA = null, error = null;
+
 			try {
 				webDriverWait.until(ExpectedConditions.urlContains("ConfirmVehicle"));
 				webDriverWait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(vehicleConfirm.makeColour));
+				vehicleRegFromDVLA = driver.findElement(vehicleConfirm.regNumber).getText();
 				makeFromDVLA = driver.findElements(vehicleConfirm.makeColour).get(0).getText();
 				colourFromDVLA = driver.findElements(vehicleConfirm.makeColour).get(1).getText();
+				assertTrue("Vehicle registration number from file:" + vehicle.getRegNumber() + ".\n" +
+								"Vehicle registration number from DVLA: " + vehicleRegFromDVLA,
+						vehicleRegFromDVLA.replaceAll("\\s", "").equalsIgnoreCase(vehicle.getRegNumber()));
 				assertTrue("Vehicle manufacturer from file :" + vehicle.getMake() + ".\n" +
 								"Vehicle manufacturer from DVLA: " + makeFromDVLA,
 						vehicle.getMake().toUpperCase().trim().equals(makeFromDVLA.toUpperCase().trim()));
